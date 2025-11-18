@@ -1,0 +1,146 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@500;600;700&display=swap');
+
+/* --- Keyframes for animated background --- */
+@keyframes pan {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+/* --- Global Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #34495e;
+  background-image: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+  font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-attachment: fixed;
+  animation: pan 90s linear infinite;
+}
+
+/* --- Main Page Container (Used by ALL components) --- */
+.cv-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px 60px;
+  background: linear-gradient(to bottom, #ecf0f1, #e6e9ea);
+  color: #333;
+  line-height: 1.6;
+  border-radius: 3px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid #bdc3c7;
+  border-left: 5px solid #1abc9c;
+}
+
+/* --- Shared Title (Used by ALL components) --- */
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #1abc9c;
+  text-transform: uppercase;
+}
+
+/* --- Global Responsive & Print Styles --- */
+@media (max-width: 768px) {
+  .cv-container {
+    padding: 30px 25px;
+    margin: 20px auto;
+  }
+  .name {
+    font-size: 2.2rem;
+  }
+  .contact-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .separator {
+    display: none;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .cv-container {
+    padding: 20px 15px;
+    margin: 10px auto;
+  }
+  .name {
+    font-size: 1.8rem;
+  }
+  .contact-info {
+    font-size: 0.85rem;
+  }
+  .section-title {
+    font-size: 1.1rem;
+  }
+  .profile-text,
+  .skills-list li,
+  .tech-items {
+    font-size: 0.9rem;
+  }
+}
+@media print {
+  body {
+    background: none;
+    animation: none;
+  }
+  .cv-container {
+    padding: 20px;
+    max-width: 100%;
+    box-shadow: none;
+    margin: 0;
+    border: none;
+    background: #ffffff;
+    color: #000;
+  }
+  .name,
+  .section-title,
+  .contact-item strong,
+  .category-title {
+    color: #000;
+    text-shadow: none;
+  }
+  .contact-item a {
+    color: #000;
+    text-decoration: underline;
+  }
+  .divider {
+    background: #ccc;
+  }
+  .section-title {
+    border-bottom-color: #ccc;
+  }
+  .skills-list li::before {
+    color: #000;
+  }
+  .tech-category {
+    background-color: #f9f9f9;
+    border-left: 4px solid #ccc;
+    box-shadow: none;
+  }
+  .profile-section,
+  .skills-section,
+  .technical-skills {
+    page-break-inside: avoid;
+  }
+}

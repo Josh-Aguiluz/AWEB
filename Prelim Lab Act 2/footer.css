@@ -1,0 +1,30 @@
+/* --- Footer Styles --- */
+.cv-footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #bdc3c7; /* Light gray line to separate */
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links li a {
+  color: #1abc9c; /* Teal Accent */
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: #16a085; /* Darker Teal */
+  text-decoration: underline;
+}
