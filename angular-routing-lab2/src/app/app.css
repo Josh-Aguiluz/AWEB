@@ -1,0 +1,71 @@
+/* --- Global Background --- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f9fc; /* Light background for the page body */
+  background-image: radial-gradient(#4ECCA3 1px, transparent 1px);
+  background-size: 20px 20px; /* Subtle polka dot pattern */
+  font-family: 'Lato', sans-serif;
+}
+
+/* --- The Dark & Mint Navbar --- */
+nav {
+  /* DARK Background (Matches your wood/dark theme) */
+  background-color: #2c2520; 
+  padding: 15px 30px;
+  
+  /* The Signature Mint Green Bottom Border */
+  border-bottom: 5px solid #4ECCA3; 
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  box-sizing: border-box;
+  
+  /* Sticky Header */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  /* Shadow for depth */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Navigation Links --- */
+nav a {
+  /* WHITE Text so it shows up on the dark background */
+  color: #f7f3e8; 
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* --- Hover Effect --- */
+nav a:hover {
+  /* Text turns Mint Green on hover */
+  color: #4ECCA3; 
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle light overlay */
+  transform: translateY(-2px);
+}
+
+/* --- Active Link (When you are on that page) --- */
+nav a.active-link {
+  background-color: #4ECCA3; /* Mint Bubble */
+  color: #2c2520; /* Dark Text inside the bubble */
+  box-shadow: 0 0 10px rgba(78, 204, 163, 0.6); /* Glow effect */
+}
+
+/* --- Router Outlet Spacing --- */
+router-outlet {
+  display: block;
+  padding-top: 40px;
+}

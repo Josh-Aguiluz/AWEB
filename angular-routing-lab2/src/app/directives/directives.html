@@ -1,0 +1,108 @@
+<div class="container">
+  <h1>Directives Demo</h1>
+
+  <section class="section-box">
+    <h2>1. Static Note (&#64;if)</h2>
+    @if(isStaticNoteVisible) {
+      <div class="alert success">✅ This is a static note with true value!</div>
+    } @else {
+      <div class="alert error">This static note has false value.</div>
+    }
+  </section>
+
+  <section class="section-box">
+    <h2>2. Control Visibility</h2>
+    <div class="content-area">
+      @if(isNoteVisible) {
+        <p class="note-box">📝 This is a visible note!</p>
+      }
+    </div>
+    <div class="button-group">
+      <button (click)="showNote()">Show Note</button>
+      <button (click)="hideNote()" class="secondary">Hide Note</button>
+    </div>
+  </section>
+
+  <section class="section-box">
+    <h2>3. Toggle Paragraph</h2>
+    <button (click)="toggleNote()">
+      {{ isParagraphVisible ? 'Hide' : 'Show' }} Paragraph
+    </button>
+    
+    @if(isParagraphVisible) {
+      <p class="fade-in-text">
+        ✨ This is the paragraph content. It appears and disappears!
+      </p>
+    }
+  </section>
+
+  <section class="section-box">
+    <h2>4. Static Month Check</h2>
+    <div class="result-box">
+      @if(monthNameStatic == 'Jan') {
+        <p>📅 January</p>
+      } @else if(monthNameStatic == 'Feb') {
+        <p>📅 February</p>
+      } @else if(monthNameStatic == 'Mar') {
+        <p>📅 March</p>
+      }
+    </div>
+  </section>
+
+  <section class="section-box">
+    <h2>5. Dynamic Month Check</h2>
+    <input type="text" [(ngModel)]="monthNameDynamic" placeholder="Type Jan, Feb, or Mar">
+    
+    <div class="result-box">
+      @if(monthNameDynamic == 'Jan') {
+        <p>Correct! It is <strong>January</strong>.</p>
+      } @else if(monthNameDynamic == 'Feb') {
+        <p>Correct! It is <strong>February</strong>.</p>
+      } @else if(monthNameDynamic == 'Mar') {
+        <p>Correct! It is <strong>March</strong>.</p>
+      } @else {
+        <p class="warning">⚠️ Wrong input! Try 'Jan', 'Feb', or 'Mar'</p>
+      }
+    </div>
+  </section>
+
+  <section class="section-box">
+    <h2>6. City List (&#64;for)</h2>
+    <ul class="city-list">
+      @for (city of cityList; track $index) {
+        <li>📍 {{ city }}</li>
+      }
+    </ul>
+  </section>
+
+  <section class="section-box">
+    <h2>7. Student Directory</h2>
+    <table class="student-table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (student of studentList; track $index) {
+          <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ student.stud_name }}</td>
+            <td>{{ student.course }}</td>
+            <td>
+              @if (student.isActive) {
+                <span class="status-badge active">Active</span>
+              } @else {
+                <span class="status-badge inactive">Inactive</span>
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </section>
+
+</div>

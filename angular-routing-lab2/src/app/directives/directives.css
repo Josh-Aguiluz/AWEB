@@ -1,0 +1,148 @@
+/* Container matches your Home/Data-Binding theme */
+:host {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #3b322c;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Individual Sections (Cards) */
+.section-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 2px solid #e0d9cf;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #4ECCA3; /* Mint Accent */
+  border-bottom: 2px dashed #e0d9cf;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Button Styling */
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 50px;
+  background-color: #4ECCA3;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.3s;
+  box-shadow: 0 4px 0 #3aa885;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background-color: #55dcb0;
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 #3aa885;
+}
+
+button.secondary {
+  background-color: #ff6b6b;
+  box-shadow: 0 4px 0 #d64d4d;
+}
+
+button.secondary:active {
+  box-shadow: 0 0 0 #d64d4d;
+}
+
+/* Input Styling */
+input {
+  padding: 10px;
+  border-radius: 50px;
+  border: 2px solid #e0d9cf;
+  width: 80%;
+  text-align: center;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+input:focus {
+  border-color: #4ECCA3;
+}
+
+/* List Styling */
+.city-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+.city-list li {
+  background: #f7f9fc;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border-left: 5px solid #4ECCA3;
+}
+
+/* Student Table Styling */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.student-table th {
+  background-color: #3b322c;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+.student-table td {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  color: #333;
+}
+
+.student-table tr:hover {
+  background-color: #f0fdf9;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.active { background-color: #4ECCA3; }
+.inactive { background-color: #ccc; color: #555; }
+
+/* Alerts and Notes */
+.note-box {
+  background: #fff3cd;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ffeeba;
+  color: #856404;
+}
+
+.warning {
+  color: red;
+  font-weight: bold;
+}

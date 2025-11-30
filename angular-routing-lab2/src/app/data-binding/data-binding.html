@@ -1,0 +1,36 @@
+<div class="demo-card">
+  <h1>{{ message }}</h1>
+  <div class="image-frame">
+    <img [src]='imageUrl' [height]='h' [width]='w' [alt]="altText">
+  </div>
+  <p [style.color]='textColor' class="blue-note">This text is blue (Color Binding)</p>
+  <p [class.highlighted]="isHighlighted">This text is highlighted! (Class Binding)</p>
+  <div class="input-group">
+    <input [(ngModel)]="yourName" placeholder="Enter your name">
+  </div>
+  <p class="greeting">Hello, <strong>{{ yourName }}</strong>! 👋</p>
+  <div class="counter-section">
+    <button (click)="increment()">Increment ➕</button>
+    <button (click)="decrement()">Decrement ➖</button>
+    <p class="count-display">Count: <span>{{ count }}</span></p>
+  </div>
+  <hr>
+  <h2>Required Examples</h2>
+  <p>Student Name (Interpolation): <strong>{{ studentName }}</strong></p>
+  <section>
+    <h3>Property Binding</h3>
+    <img [src]="imageUrls" width="200" />
+    <br><br>
+    <button [disabled]="isDisabled">Submit (Disabled)</button>
+  </section>
+  <section>
+    <h3>Class Binding</h3>
+    <p [class.passing]="isPassing" [class.failing]="!isPassing">
+      Student Result: {{ isPassing ? 'Passed' : 'Failed' }}
+    </p>
+  </section>
+  <section>
+    <h3>Style Binding</h3>
+    <div [style.background]="boxColor" [style.width]="boxSize" [style.height]="boxSize" class="box"></div>
+  </section>
+</div>

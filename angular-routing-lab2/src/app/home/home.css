@@ -1,0 +1,185 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@500;600;700;800&display=swap');
+
+/* --- Main Container --- */
+.home-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 4px solid #e0d9cf;
+  box-shadow: 0 10px 25px rgba(59, 50, 44, 0.1);
+  font-family: 'Lato', sans-serif;
+  color: #3b322c;
+  text-align: center;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* --- Floating Cat Profile --- */
+.profile-frame {
+  width: 150px;
+  height: 150px;
+  background: #f7f5f2;
+  border-radius: 50%; /* Circle */
+  padding: 8px;
+  border: 4px dashed #4ECCA3; /* Mint Dash Border */
+  box-shadow: 0 8px 20px rgba(78, 204, 163, 0.3);
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite; /* Floating animation */
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* --- Typography --- */
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #3b322c;
+}
+
+.highlight {
+  color: #4ECCA3; /* Mint Accent */
+  text-shadow: 2px 2px 0px #3b322c;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4ECCA3;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.description {
+  max-width: 500px;
+  margin: 0 auto 25px auto;
+  line-height: 1.6;
+  color: #5c5048;
+}
+
+/* --- Button --- */
+.cta-button {
+  background-color: #3b322c;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(59, 50, 44, 0.3);
+}
+
+.cta-button:hover {
+  background-color: #4ECCA3;
+  transform: translateY(-3px);
+  color: #3b322c;
+}
+
+/* --- Divider --- */
+.divider {
+  border: 0;
+  border-top: 2px dashed #e0d9cf;
+  margin: 40px 0;
+}
+
+/* --- Featured Section --- */
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #3b322c;
+  margin-bottom: 30px;
+}
+
+/* Project Card */
+.project-card {
+  background: #fcfcfc;
+  border: 2px solid #e0d9cf;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 400px;
+  margin: 0 auto 30px auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+  border-color: #4ECCA3;
+  box-shadow: 0 10px 20px rgba(78, 204, 163, 0.15);
+}
+
+.card-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 10px;
+}
+
+.status-badge {
+  display: inline-block;
+  background-color: #e3f2fd; /* Light Blue */
+  color: #1976d2;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* --- Stats Box --- */
+.stats-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.stat {
+  background-color: #4ECCA3;
+  padding: 15px 25px;
+  border-radius: 15px;
+  color: white;
+  min-width: 120px;
+}
+
+.stat .number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.stat .label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
