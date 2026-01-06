@@ -1,0 +1,64 @@
+/* Navbar Styling: Glass Effect */
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.95); /* White with slight transparency */
+  backdrop-filter: blur(10px); /* Blurs the background behind it */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Brand Logo Styling */
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+}
+
+/* Link Styling */
+.nav-link {
+  font-weight: 500;
+  color: #6c757d !important; /* Gray text by default */
+  padding: 10px 15px !important;
+  position: relative; /* Needed for the underline to stick to the text */
+  transition: color 0.3s ease;
+}
+
+/* Hover & Active State Color */
+.nav-link:hover, .active-link {
+  color: #0d6efd !important; /* Blue text */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* The Sliding Underline Animation */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 5px;
+  left: 50%;
+  background-color: #0d6efd; /* Blue line */
+  transition: all 0.3s ease;
+  transform: translateX(-50%); /* Centers the line animation */
+}
+
+/* Expand the line when hovered or active */
+.nav-link:hover::after, .active-link::after {
+  width: 80%;
+}
+/* Makes the table rows float separately */
+.custom-table {
+  border-collapse: separate;
+  border-spacing: 0 15px; /* Adds space between rows */
+}
+
+.custom-table tbody tr {
+  background-color: white;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.custom-table tbody tr:hover {
+  transform: scale(1.01); /* Rows pop out slightly */
+  z-index: 2;
+  position: relative;
+}
+
+/* Keep your Gold/Silver colors here too */

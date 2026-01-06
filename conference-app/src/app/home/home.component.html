@@ -1,0 +1,44 @@
+<div class="position-relative text-center text-white"
+     [style.backgroundImage]="'url(' + heroImage + ')'"
+     style="background-size: cover; background-position: center; height: 60vh; min-height: 500px;">
+
+  <div class="d-flex justify-content-center align-items-center h-100"
+       style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7));">
+
+    <div class="container">
+      <h1 class="display-3 fw-bold text-uppercase" style="letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">{{ title }}</h1>
+      <h3 class="fw-light mb-4">{{ subTitle }}</h3>
+      <button class="btn btn-warning btn-lg fw-bold px-5 rounded-pill shadow">Register Now</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">Global Conference Locations</h2>
+    <div class="bg-warning mx-auto mt-2" style="width: 60px; height: 3px;"></div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-3" *ngFor="let city of cities">
+      <div class="card h-100 border-0 shadow-sm hover-card rounded-3 overflow-hidden">
+
+        <img [src]="city.img" class="card-img-top" alt="{{ city.name }}" style="height: 200px; object-fit: cover;">
+
+        <div class="card-body">
+          <h4 class="card-title fw-bold text-primary">{{ city.name }}</h4>
+          <p class="card-text text-secondary small">{{ city.desc }}</p>
+        </div>
+
+        <div class="card-footer bg-light border-0 py-3">
+          <small class="text-uppercase fw-bold text-muted" style="letter-spacing: 1px;">{{ city.category }}</small>
+        </div>
+        <div class="d-inline-block">
+  <h3 class="fw-light mb-4 typing-text">{{ subTitle }}</h3>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>

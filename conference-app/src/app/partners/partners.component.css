@@ -1,0 +1,31 @@
+/* Platinum - Shiny off-white/blueish silver */
+.tier-platinum {
+    background: linear-gradient(145deg, #ffffff, #e5e4e2);
+    color: #5a5a5a; /* Dark gray text for readability */
+    border: 1px solid #d3d3d3;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Gold - Rich yellow/metallic */
+.tier-gold {
+    background: linear-gradient(145deg, #ffd700, #e6c200);
+    color: #4b3d00; /* Dark gold text */
+    border: 1px solid #cfa600;
+    box-shadow: 0 2px 4px rgba(189, 154, 0, 0.3);
+}
+
+/* Silver - Classic light gray */
+.tier-silver {
+    background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
+    color: #333; /* Dark text */
+    border: 1px solid #a9a9a9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* Bronze - Reddish brown */
+.tier-bronze {
+    background: linear-gradient(145deg, #e3935b, #cd7f32);
+    color: #fff; /* White text */
+    border: 1px solid #a0522d;
+    box-shadow: 0 2px 4px rgba(160, 82, 45, 0.3);
+}
