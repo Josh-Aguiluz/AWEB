@@ -1,0 +1,105 @@
+<hr>
+
+<div class="card date-card">
+   <h3>Date Pipes</h3>
+   <div class="clock-face">
+      <div class="time-main">{{presentDate | date:'h:mm:ss a'}}</div>
+      <div class="date-sub">{{presentDate | date:'EEEE, MMMM d'}}</div>
+   </div>
+   <div class="raw-data">
+      This is a short date :- {{presentDate | date:'shortDate' }} <br/>
+      This line shows the full date :- {{presentDate | date:'fullDate' }} <br/>
+      This will show a formatted date:- {{presentDate | date:'M/dd/yyyy'}} <br/>
+      This indicates the hours and minutes:- {{presentDate | date:'h:mm'}}
+   </div>
+   <div class="transform-data">
+      Date with uppercase :- {{presentDate | date:'fullDate' | uppercase}} <br/>
+      Date with lowercase :- {{presentDate | date:'medium' | lowercase}} <br/>
+   </div>
+</div>
+
+<hr>
+
+<div class="card currency-card">
+   <h3> Currency Pipe</h3>
+   <div class="coin-row">
+      <div class="coin gold"><span>{{ price | currency:'PHP':true}}</span></div>
+      <div class="coin silver"><span>{{ price | currency:'INR' }}</span></div>
+   </div>
+</div>
+
+<hr>
+
+<div class="card slice-card">
+   <h3>Slice Pipe (Fruits Array)</h3>
+   <div class="fruit-list">
+      <div class="fruit-item"><b>Start index:</b> {{Fruits | slice:2}}</div>
+      <div class="fruit-item"><b>Start and end:</b> {{Fruits | slice:1:4}}</div>
+      <div class="fruit-item"><b>Negative index:</b> {{Fruits | slice:-2}}</div>
+      <div class="fruit-item"><b>Negative start/end:</b> {{Fruits | slice:-4:-2}}</div>
+   </div>
+</div>
+
+<hr>
+
+<div class="card decimal-card">
+   <h3>Decimal Pipe</h3>
+   <div class="decimal-list">
+      <p> {{decimalNum1 | number}} </p>
+      <p> {{decimalNum2 | number}} </p>
+   </div>
+   <div class="calc-screen">
+      <p> Apply formatting:- {{decimalNum1 | number:'3.1'}} </p>
+      <p> Apply formatting:- {{decimalNum1 | number:'2.1-4'}} </p>
+   </div>
+</div>
+
+<hr>
+
+<div class="card async-card">
+   <h3>Async Pipe (Live)</h3>
+   <div class="live-monitor">
+      <span class="pulse-red"></span>
+      Seconds changing in Time: {{ time$ | async | date:'mediumTime' }}
+   </div>
+</div>
+
+<hr>
+
+<div class="card json-card">
+   <h3>Json Pipe</h3>
+   <div class="code-container">
+      <div class="code-header">
+         <span class="dot red"></span>
+         <span class="dot yellow"></span>
+         <span class="dot green"></span>
+         <span class="file-name">data.json</span>
+      </div>
+      <pre><code>{{ testObject | json }}</code></pre>
+   </div>
+</div>
+
+<hr>
+
+<hr>
+
+<div class="card percent-card">
+   <h3>Percent Pipe</h3>
+   <div class="percent-display">
+      <p>Raw number 0.8567 becomes: <b>{{ percentage | percent }}</b></p>
+      <p>Formatted with 2 decimals: <b>{{ percentage | percent:'2.2-2' }}</b></p>
+   </div>
+</div>
+
+<hr>
+
+<div class="card titlecase-card">
+   <h3>TitleCase Pipe</h3>
+   <div class="titlecase-display">
+      <p>Original Text: <i>{{ simpleText }}</i></p>
+      <p>Used for proper naming: <b>{{ simpleText | titlecase }}</b></p>
+   </div>
+</div>
+
+<hr>
+<h1 class="main-footer">Josh Andrei Aguiluz : January 2026</h1>
