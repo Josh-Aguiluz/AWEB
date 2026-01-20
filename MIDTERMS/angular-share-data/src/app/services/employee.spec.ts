@@ -1,20 +1,15 @@
-import { Injectable } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
+import { EmployeeService } from './employee'; 
 
-@Injectable({
-  providedIn: 'root'
-})
-export class EmployeeService {
+describe('EmployeeService', () => {
+  let service: EmployeeService; 
 
-  constructor() { }
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(EmployeeService); // Inject the correct class name
+  });
 
-  getEmployees() {
-    return [
-      { id: 101, firstname: 'Joseph', lastname: 'Dizon', email: 'jdizon@hau.edu.ph' },
-      { id: 102, firstname: 'James', lastname: 'Atienza', email: 'jatienza@hau.edu.ph' },
-      { id: 103, firstname: 'John', lastname: 'Cena', email: 'jcena@hau.edu.ph' },
-      { id: 104, firstname: 'Robert', lastname: 'Quintana', email: 'rquintana@hau.edu.ph' },
-      // Your name added here as required
-      { id: 105, firstname: 'Josh Andrei', lastname: 'Aguiluz', email: 'jaguiluz@hau.edu.ph' }
-    ];
-  }
-}
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+});
