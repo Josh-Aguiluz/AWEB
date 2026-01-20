@@ -1,0 +1,51 @@
+<div class="container">
+  
+  <h2 class="section-title">EMPLOYEES LIST</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>EMAIL</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (emp of employees; track emp.id) {
+        <tr>
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.firstname }}</td>
+          <td>{{ emp.lastname }}</td>
+          <td>{{ emp.email }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <br><br>
+
+  <h2 class="section-title">PRODUCT LIST</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (prod of products; track prod.id) {
+        <tr>
+          <td>{{ prod.id }}</td>
+          <td>{{ prod.name }}</td>
+          <td>{{ prod.description }}</td>
+          <td>{{ prod.price | currency:'PHP ' }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+</div>
+
+<router-outlet />
