@@ -1,0 +1,67 @@
+/* --- THEME: CYBER TERMINAL --- */
+
+/* The main window background */
+.container {
+  background-color: #0a0a0f; /* Deep void black */
+  color: #e0e0e0; /* Off-white text */
+  font-family: 'Courier New', Courier, monospace; /* Retro console font */
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The Title */
+h1 {
+  color: #00f3ff; /* Cyber Cyan */
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 0 15px rgba(0, 243, 255, 0.7); /* Neon Glow */
+  border-bottom: 2px solid #00f3ff;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+/* The Table Design */
+table {
+  width: 80%;
+  border-collapse: collapse;
+  background-color: #13131a; /* Dark gray card background */
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.1); /* Subtle blue aura */
+  border: 1px solid #333;
+}
+
+/* Table Header (The columns) */
+thead {
+  background: linear-gradient(90deg, #1f1f2e 0%, #2a2a3d 100%);
+}
+
+th {
+  color: #ff0055; /* Neon Pink/Red for headers */
+  padding: 15px;
+  text-align: left;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #444;
+}
+
+/* Table Rows */
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #2a2a35;
+  color: #00ff41; /* Hacker Green for data */
+}
+
+/* --- THE COOL GAMER EFFECT --- */
+/* When you hover over a row, it lights up and zooms slightly */
+tbody tr {
+  transition: all 0.2s ease-in-out;
+}
+
+tbody tr:hover {
+  background-color: #1f1f2e;
+  transform: scale(1.02); /* Pop out effect */
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.3); /* Green glow */
+  cursor: crosshair; /* Changes mouse to a crosshair */
+  border-left: 5px solid #00f3ff; /* selection bar on left */
+}
