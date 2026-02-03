@@ -1,0 +1,35 @@
+<div class="app-container">
+
+  <nav class="hud-nav">
+    <div class="nav-brand">
+      <div class="brand-icon"></div> <span>COMMUNITY<span style="color: var(--neon-main);">HELPDESK</span></span>
+    </div>
+
+    <div class="nav-links">
+      <a routerLink="/home" routerLinkActive="active-link">
+        <span class="nav-text">HOME</span>
+      </a>
+
+      <a routerLink="/about" routerLinkActive="active-link">
+        <span class="nav-text">ABOUT</span>
+      </a>
+
+      <a routerLink="/services" routerLinkActive="active-link">
+        <span class="nav-text">SERVICES</span>
+      </a>
+
+      <a routerLink="/contact" routerLinkActive="active-link">
+        <span class="nav-text">CONTACT</span>
+      </a>
+    </div>
+
+    <div class="nav-status">
+      <span class="status-indicator"></span> SYSTEM ONLINE
+    </div>
+  </nav>
+
+  <div class="content-area">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

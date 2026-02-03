@@ -1,0 +1,180 @@
+/* --- MODERN GAMER THEME (Clean & Readable) --- */
+:root {
+  --bg-color: #080c08;       /* Very Dark Green-Black (Softer than #000) */
+  --card-bg: #0f160f;        /* Slightly lighter card background */
+  --text-main: #e0e0e0;      /* Off-White (Best for reading) */
+  --text-muted: #a0a0a0;     /* Grey for less important text */
+  --neon-main: #00ff41;      /* MATRIX GREEN (For accents only) */
+  --neon-dim: #00661a;       /* Dark Green Borders */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Roboto', sans-serif; /* Readable standard font */
+  margin: 0;
+  line-height: 1.6; /* More space between lines */
+}
+
+/* Headers - Keep the Sci-Fi Look */
+h1, h2, h3, .brand {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--neon-main);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+/* Inputs - Aesthetic but Readable */
+input, textarea {
+  background-color: #050505 !important;
+  border: 1px solid var(--neon-dim) !important;
+  color: #fff !important; /* White text when typing */
+  padding: 12px;
+  border-radius: 4px; /* Slight curve looks more modern */
+  font-family: 'Roboto Mono', monospace; /* Code font for inputs */
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--neon-main) !important;
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.3);
+}
+
+/* Buttons - High Tech Style */
+button {
+  background: linear-gradient(180deg, #0f160f 0%, #050505 100%);
+  border: 1px solid var(--neon-dim);
+  color: var(--neon-main);
+  padding: 10px 24px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  border-color: var(--neon-main);
+  text-shadow: 0 0 8px var(--neon-main);
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+  transform: translateY(-1px); /* Slight lift effect */
+}
+
+/* Cards - Separation for Readability */
+div[style*="border"] {
+  border: 1px solid var(--neon-dim) !important;
+  background-color: var(--card-bg) !important;
+  border-radius: 8px; /* Modern rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Soft depth shadow */
+  padding: 20px !important;
+}
+
+a {
+  color: var(--neon-main);
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover {
+  text-shadow: 0 0 10px var(--neon-main);
+  text-decoration: underline;
+}
+
+/* Force all paragraph text in cards to be bright off-white */
+div[style*="border"] p {
+  color: #e0e0e0 !important; /* Bright Grey/White */
+  font-size: 1rem;            /* Slightly larger text */
+  line-height: 1.6;           /* More space between lines */
+  font-weight: 400;           /* Normal weight (not too thin) */
+  opacity: 0.9;               /* Slight softness */
+}
+
+/* Make the titles inside cards pop even more */
+div[style*="border"] strong,
+div[style*="border"] h3 {
+  color: #fff !important;    /* Pure White for titles */
+  letter-spacing: 0.5px;
+}
+/* --- IGLOO / BENTO STYLE UPGRADE --- */
+
+/* 1. The Container for the Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-responsive */
+  gap: 20px;
+  padding: 10px 0;
+}
+
+/* 2. The Glass Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03); /* Very subtle transparent white */
+  backdrop-filter: blur(10px);           /* The "Frost" effect */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;                   /* Smooth rounded corners */
+  padding: 25px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  /* Entrance Animation */
+  animation: fadeSlideUp 0.6s ease-out forwards;
+  opacity: 0; /* Start invisible */
+}
+
+/* 3. Hover Effects (The "Interactive" part) */
+.glass-card:hover {
+  transform: translateY(-5px) scale(1.02); /* Lifts up */
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--neon-main);          /* Green Border Glow */
+  box-shadow: 0 10px 30px -10px rgba(0, 255, 65, 0.3); /* Green shadow under */
+}
+
+/* 4. Text Styling inside Cards */
+.glass-card h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.glass-card p {
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* 5. A cool "Badge" for the ID (Decorative) */
+.card-badge {
+  display: inline-block;
+  background: rgba(0, 255, 65, 0.1);
+  color: var(--neon-main);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 15px;
+  border: 1px solid rgba(0, 255, 65, 0.3);
+}
+
+/* 6. The Animation Keyframes */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation for items (Visual trick) */
+.glass-card:nth-child(1) { animation-delay: 0.1s; }
+.glass-card:nth-child(2) { animation-delay: 0.2s; }
+.glass-card:nth-child(3) { animation-delay: 0.3s; }
+.glass-card:nth-child(4) { animation-delay: 0.4s; }
+.glass-card:nth-child(5) { animation-delay: 0.5s; }
