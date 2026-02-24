@@ -1,0 +1,51 @@
+<div class="page-wrapper">
+
+  <div class="form-container">
+    <h2>{{ title }}</h2>
+
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+      <input class="input-box" type="text" name="username" [(ngModel)]="username" placeholder="Enter username" required>
+      <input class="input-box" type="email" name="email" [(ngModel)]="email" placeholder="Enter email" required email>
+      <input class="input-box" type="password" name="password" [(ngModel)]="password" placeholder="Enter password" required minlength="6">
+
+      <select class="input-box" name="role" [(ngModel)]="role" required>
+        <option value="" disabled selected>Select role</option>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+        <option value="guest">Guest</option>
+      </select>
+
+      <div class="radio-group">
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male" [(ngModel)]="gender" required> Male
+        <input type="radio" name="gender" value="Female" [(ngModel)]="gender" required> Female
+      </div>
+
+      <select class="input-box" name="status" [(ngModel)]="status" required>
+        <option value="" disabled selected>Select Status</option>
+        <option value="Permanent">Permanent</option>
+        <option value="Probationary">Probationary</option>
+      </select>
+
+      <textarea class="input-box" name="comments" [(ngModel)]="comments" placeholder="Add your comments here..." rows="3" required></textarea>
+
+      <input class="btn" type="submit" value="Submit" [disabled]="!myForm.valid">
+    </form>
+
+    <div *ngIf="submitted" class="success-msg">
+      Form submitted successfully!
+    </div>
+  </div>
+
+  <div class="result-container" *ngIf="submitted">
+    <h2>Submitted Data</h2>
+    <div class="result-box"><strong>Username:</strong> {{ username }}</div>
+    <div class="result-box"><strong>Email:</strong> {{ email }}</div>
+    <div class="result-box"><strong>Password:</strong> {{ password }}</div>
+    <div class="result-box"><strong>Role:</strong> {{ role }}</div>
+    <div class="result-box"><strong>Gender:</strong> {{ gender }}</div>
+    <div class="result-box"><strong>Status:</strong> {{ status }}</div>
+    <div class="result-box"><strong>Comments:</strong> {{ comments }}</div>
+  </div>
+
+</div>

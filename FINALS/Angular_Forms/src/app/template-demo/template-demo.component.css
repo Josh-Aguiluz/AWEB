@@ -1,0 +1,167 @@
+/* --- CSS Variables for the Nvidia Theme --- */
+:host {
+  --nvidia-green: #76b900; /* The signature neon green */
+  --bg-dark: #121212;      /* Deepest background */
+  --bg-card: #1e1e1e;      /* Card background */
+  --bg-input: #2a2a2a;     /* Input field background */
+  --text-primary: #ffffff; /* Main white text */
+  --text-secondary: #b0b0b0; /* Lighter gray text */
+  --glow-spread: 0 0 15px rgba(118, 185, 0, 0.6); /* Glowing effect */
+}
+
+/* Outer wrapper to center everything and set the main background vibe */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin: 0;
+  padding: 50px 20px;
+  min-height: 100vh; /* Fill the screen */
+  background-color: var(--bg-dark); /* Dark background for the whole page area */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Modern tech font */
+  color: var(--text-primary);
+}
+
+/* --- Main Card Styling (Form & Results) --- */
+.form-container, .result-container {
+  width: 100%;
+  max-width: 450px; /* Slightly wider for an elegant feel */
+  padding: 40px;
+  border-radius: 12px; /* Softer corners */
+  background-color: var(--bg-card);
+  /* A subtle glowing border instead of a shadow */
+  border: 1px solid #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Add a subtle glow on hover for an interactive feel */
+.form-container:hover, .result-container:hover {
+    border-color: var(--nvidia-green);
+    box-shadow: var(--glow-spread);
+}
+
+/* --- Typography --- */
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--nvidia-green); /* Green headings */
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(118, 185, 0, 0.4); /* Slight text glow */
+}
+
+label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* --- Input Fields --- */
+.input-box {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  background-color: var(--bg-input);
+  border: 2px solid transparent; /* Hidden border by default */
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Style placeholder text */
+::placeholder {
+    color: #666;
+}
+
+/* When you click into an input field */
+.input-box:focus {
+  outline: none;
+  border-color: var(--nvidia-green); /* Green border appears */
+  box-shadow: 0 0 8px rgba(118, 185, 0, 0.5); /* Green glow appears */
+  background-color: #333;
+}
+
+/* --- Radio Buttons --- */
+.radio-group {
+  margin-bottom: 25px;
+  padding: 10px 0;
+  color: var(--text-secondary);
+}
+
+.radio-group label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    accent-color: var(--nvidia-green); /* Makes the radio dot green */
+    transform: scale(1.2); /* Makes it slightly bigger */
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* --- Submit Button --- */
+.btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--nvidia-green); /* Solid green background */
+  color: black; /* Black text for high contrast */
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: #8add00; /* Slightly brighter on hover */
+  box-shadow: 0 0 20px rgba(118, 185, 0, 0.8); /* Intense glow */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.btn:disabled {
+  background-color: #444;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* --- Success Message --- */
+.success-msg {
+  margin-top: 25px;
+  padding: 15px;
+  background-color: rgba(118, 185, 0, 0.1); /* Subtle green background */
+  border: 1px solid var(--nvidia-green);
+  color: var(--nvidia-green);
+  font-weight: bold;
+  text-align: center;
+  border-radius: 6px;
+}
+
+/* --- Right Side: Results Box --- */
+.result-box {
+  padding: 15px;
+  margin-bottom: 12px;
+  background-color: var(--bg-input);
+  border-left: 4px solid var(--nvidia-green); /* A cool tech-readout style border */
+  border-radius: 4px;
+  font-family: 'Consolas', 'Courier New', monospace; /* Monospace font for data look */
+  color: var(--text-secondary);
+  display: flex;
+}
+
+.result-box strong {
+    color: var(--nvidia-green); /* Labels in green */
+    margin-right: 10px;
+    min-width: 90px;
+    display: inline-block;
+}

@@ -1,0 +1,71 @@
+<div class="page-wrapper">
+
+  <div class="form-container">
+    <h2>{{ title }}</h2>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <label>Username</label>
+      <input class="input-box" placeholder="Enter username" formControlName="username" />
+      <div *ngIf="isInvalid('username')" class="error-msg">
+        Username must be 4-12 characters (letters, numbers, _).
+      </div>
+
+      <label>Email</label>
+      <input class="input-box" type="email" placeholder="Enter email" formControlName="email" />
+      <div *ngIf="isInvalid('email')" class="error-msg">
+        Please enter a valid email address.
+      </div>
+
+      <label>Password</label>
+      <input class="input-box" type="password" placeholder="Enter password" formControlName="password" />
+      <div *ngIf="isInvalid('password')" class="error-msg">
+        Password needs 8+ characters, including uppercase, lowercase, and a number.
+      </div>
+
+      <label>Role</label>
+      <select class="input-box" formControlName="role">
+        <option value="" disabled selected>Select Role</option>
+        <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+      </select>
+      <div *ngIf="isInvalid('role')" class="error-msg">Role is required.</div>
+
+      <div class="radio-group">
+        <label>Gender:</label>
+        <input type="radio" formControlName="gender" value="Male"> Male
+        <input type="radio" formControlName="gender" value="Female"> Female
+      </div>
+      <div *ngIf="isInvalid('gender')" class="error-msg">Gender is required.</div>
+
+      <label>Status</label>
+      <select class="input-box" formControlName="status">
+        <option value="" disabled selected>Select Status</option>
+        <option value="Permanent">Permanent</option>
+        <option value="Probationary">Probationary</option>
+      </select>
+      <div *ngIf="isInvalid('status')" class="error-msg">Status is required.</div>
+
+      <label>Comments</label>
+      <textarea class="input-box" formControlName="comments" placeholder="Add notes here..." rows="3"></textarea>
+      <div *ngIf="isInvalid('comments')" class="error-msg">Comments are required.</div>
+
+      <button class="btn" type="submit" [disabled]="form.invalid">Submit</button>
+    </form>
+
+    <div *ngIf="submittedData" class="success-msg">
+      Form submitted successfully!
+    </div>
+  </div>
+
+  <div class="result-container" *ngIf="submittedData">
+    <h2>Submitted Data</h2>
+    <div class="result-box"><strong>Username:</strong> {{ submittedData.username }}</div>
+    <div class="result-box"><strong>Email:</strong> {{ submittedData.email }}</div>
+    <div class="result-box"><strong>Password:</strong> {{ submittedData.password }}</div>
+    <div class="result-box"><strong>Role:</strong> {{ submittedData.role }}</div>
+    <div class="result-box"><strong>Gender:</strong> {{ submittedData.gender }}</div>
+    <div class="result-box"><strong>Status:</strong> {{ submittedData.status }}</div>
+    <div class="result-box"><strong>Comments:</strong> {{ submittedData.comments }}</div>
+  </div>
+
+</div>
