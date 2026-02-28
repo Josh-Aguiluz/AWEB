@@ -1,0 +1,58 @@
+<div [class.dark-theme]="isDarkMode" [class.light-theme]="!isDarkMode" class="main-container">
+  <mat-card class="form-card">
+    <h1>Event Registration Challenge</h1>
+    
+    <div class="toggle-section">
+      <span>Light</span>
+      <mat-slide-toggle [checked]="isDarkMode" (change)="toggleTheme()"></mat-slide-toggle>
+      <span>Dark</span>
+    </div>
+
+    <form [formGroup]="challengeForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>Full Name</mat-label>
+        <input matInput formControlName="fullName">
+        <mat-error *ngIf="challengeForm.get('fullName')?.invalid && challengeForm.get('fullName')?.touched">
+          Full name is required.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+        <mat-error *ngIf="challengeForm.get('email')?.invalid && challengeForm.get('email')?.touched">
+          Please enter a valid email address.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-hint>Min 8 chars, start with letter, alphanumeric</mat-hint>
+        <mat-error *ngIf="challengeForm.get('password')?.invalid && challengeForm.get('password')?.touched">
+          Must start with a letter and be alphanumeric (min 8).
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" [max]="maxDate" formControlName="dob">
+        <mat-hint>Must be born 2006 or earlier</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="challengeForm.get('dob')?.invalid && challengeForm.get('dob')?.touched">
+          Valid birth date required (2006 or earlier).
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button type="submit" [disabled]="!challengeForm.valid">JOIN EVENT</button>
+    </form>
+
+    <div *ngIf="submitted" class="results-container">
+      <h3>Submitted Details:</h3>
+      <p><strong>Name:</strong> {{ challengeForm.value.fullName }}</p>
+      <p><strong>Email:</strong> {{ challengeForm.value.email }}</p>
+      <p><strong>Birth Date:</strong> {{ challengeForm.value.dob | date }}</p>
+    </div>
+  </mat-card>
+</div>

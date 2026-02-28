@@ -1,0 +1,95 @@
+/* Container and Header */
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #121212;
+  color: #ffffff;
+  padding: 40px 0;
+}
+
+h1 {
+  text-align: center;
+  color: #76b900;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(118, 185, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+.form-container {
+  max-width: 600px; /* Widened to fit the fields better */
+  margin: 0 auto;
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+/* FIX: Ensure Input Text is Pure White */
+::ng-deep .mat-mdc-form-field-input-control {
+  color: #ffffff !important;
+}
+
+/* FIX: Make Labels Readable */
+::ng-deep .mat-mdc-form-field-label {
+  color: #76b900 !important; /* Nvidia Green for labels */
+  opacity: 0.9;
+}
+
+/* FIX: Field Outline Colors */
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading,
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch,
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+  border-color: #444 !important;
+}
+
+/* Active/Focus State */
+::ng-deep .mdc-text-field--focused .mdc-notched-outline__leading,
+::ng-deep .mdc-text-field--focused .mdc-notched-outline__notch,
+::ng-deep .mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: #76b900 !important;
+  border-width: 2px !important;
+}
+
+/* Fix for Radio Buttons and Labels */
+.radio-label, .slider-label {
+  color: #76b900;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+::ng-deep .mdc-label {
+  color: #ffffff !important; /* Fixes "Male/Female" text visibility */
+}
+
+/* Fix for Birth Date and Address alignment */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+/* Submit Button */
+button[mat-raised-button] {
+  background-color: #76b900 !important;
+  color: #000 !important;
+  font-weight: bold;
+  height: 50px;
+  margin-top: 20px;
+}
+
+button[disabled] {
+  background-color: #333 !important;
+  color: #666 !important;
+}
+/* Make the dividers glow Nvidia Green */
+mat-divider {
+  border-top-color: #76b900 !important;
+  border-top-width: 2px !important;
+  margin: 15px 0 !important;
+  box-shadow: 0 0 5px rgba(118, 185, 0, 0.5);
+}
